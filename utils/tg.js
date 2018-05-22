@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 'use strict'
 
 const { telegram } = require('../bot')
@@ -14,8 +15,8 @@ const isCommand = R.pipe(
 const escapeHtml = s => s
   .replace(/</g, '&lt;')
 
-const link = ({ id, firstName }) =>
-  `<a href="tg://user?id=${id}">${escapeHtml(firstName)}</a>`
+const link = ({ id, first_name }) =>
+  `<a href="tg://user?id=${id}">${escapeHtml(first_name)}</a>`
 
 const quietLink = (user) =>
   user.username

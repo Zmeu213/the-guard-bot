@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 'use strict'
 
 // Utils
@@ -21,9 +22,9 @@ const getWarnsHandler = async ({ message, reply, state }) => {
   if (!isAdmin && mentionedUser.id !== state.user.id) return null
 
   const theUser = await getUser({ id: mentionedUser.id })
-  const { firstName, id, lastName, status, username, warns } = theUser
+  const { first_name, id, last_name, status, username, warns } = theUser
 
-  const userName = `<b>Name:</b> <code>${firstName} ${lastName}</code>\n`
+  const userName = `<b>Name:</b> <code>${first_name} ${last_name}</code>\n`
   const userId = `<b>ID:</b> <code>${id}</code>\n`
   const userStatus = `<b>Status:</b> <code>${status}</code>\n`
   const userUsername = username

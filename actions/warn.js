@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 'use strict'
 
 const dedent = require('dedent-js')
@@ -9,10 +10,10 @@ const { warn } = require('../stores/user')
 const ban = require('./ban')
 
 module.exports = async ({ admin, userToWarn, reason }) => {
-  const byId = admin.id
+  const by_id = admin.id
   const date = new Date()
 
-  const { warns } = await warn(userToWarn, { byId, date, reason })
+  const { warns } = await warn(userToWarn, { by_id, date, reason })
 
   const isLastWarn = ', <b>last warning!</b>'
     .repeat(warns.length === numberOfWarnsToBan - 1)

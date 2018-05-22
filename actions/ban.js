@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 'use strict'
 
 const dedent = require('dedent-js')
@@ -16,10 +17,10 @@ const displayUser = user =>
 module.exports = async ({ admin, userToBan, reason }) => {
   // move some checks from handler here?
 
-  const byId = admin.id
+  const by_id = admin.id
   const date = new Date()
 
-  await ban(userToBan, { byId, date, reason })
+  await ban(userToBan, { by_id, date, reason })
 
   const groups = await listGroups()
 

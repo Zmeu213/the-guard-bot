@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 'use strict'
 
 // Utils
@@ -36,13 +37,13 @@ const normalizeTgUser = R.pipe(
 
 const getUpdatedDocument = R.prop(1)
 
-const addUser = ({ id, firstName = '', lastName = '', username = '' }) =>
+const addUser = ({ id, first_name = '', last_name = '', username = '' }) =>
   User.update(
     { id },
     {
-      firstName,
+      first_name,
       id,
-      lastName,
+      last_name,
       status: 'member',
       username: username.toLowerCase(),
       warns: []

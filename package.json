@@ -5,9 +5,12 @@
   "main": "index.js",
   "scripts": {
     "precommit": "bash scripts/pre-commit.sh",
-    "start": "node index",
+    "start": "forever start -l \"/home/dev/.forever/guardbot.log\" -a --uid \"guardbot\" index.js",
+    "restart": "forever restart guardbot",
+    "stop": "forever stop guardbot",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "standard"
+    "lint": "standard",
+    "debug": "nodemon index"
   },
   "repository": {
     "type": "git",
@@ -26,12 +29,13 @@
   ],
   "license": "AGPL-3.0",
   "bugs": {
-    "url": "https://github.com/TheDevs-Network/the-guard-bot/issues"
+    "url": "https://github.com/Zmeu213/the-guard-bot/issues"
   },
-  "homepage": "https://github.com/TheDevs-Network/the-guard-bot/",
+  "homepage": "https://github.com/Zmeu213/the-guard-bot",
   "dependencies": {
     "daggy": "^1.2.0",
     "dedent-js": "^1.0.1",
+    "forver": "0.0.6",
     "millisecond": "^0.1.2",
     "nedb-promise": "^2.0.1",
     "node-fetch": "^2.1.2",
@@ -46,6 +50,7 @@
   "devDependencies": {
     "eslint": "^4.17.0",
     "husky": "^0.14.3",
+    "nodemon": "^1.17.4",
     "standard": "^11.0.1"
   }
 }

@@ -15,10 +15,8 @@ const leaveCommandHandler = async ctx => {
       : { title: groupName }
     const isGroup = await managesGroup(group)
     if (!isGroup) {
-      // eslint-disable-next-line function-paren-newline
       return replyWithHTML(
         'ℹ️ <b>Couldn\'t find a group with that ID/name.</b>'
-        // eslint-disable-next-line function-paren-newline
       )
     }
     await Promise.all([
